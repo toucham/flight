@@ -1,4 +1,8 @@
 <style>
+.img-container {
+  display: flex;
+  justify-content: center;
+}
 .big-img {
   width: 50%;
   min-width: 360px;
@@ -47,9 +51,9 @@ A web application consist of one or many clients and a server. The application f
 3. Server replies back to the client with a response (e.g. HTTP Response).
 4. The response could be in some kind of format that needs the client to process in order to use or understand it (e.g. HTTP response body could contain JSON with specific type or it could be a encoded string that needs decoding).
 
-<center>
+<div class="img-container">
    <img src="./assets/client-server-model.svg" />
-</center>
+</div>
 
 <br/>
 
@@ -63,16 +67,16 @@ Communication between the client and server is done through computer network. Es
 ### Five Layers Model
 In computer networking, the format of the messages exchanged between hosts/devices is determined by a set of standardized protocols. For this project, the protocols will be based on the <b>five-layer protocols</b> mentioned in Jim Kurose and Keith Ross textbook (Figure 2). There is also the OSI model that splits the protocols in 7 layers; however, this project is based on Kurose and Rose model. The five-layers model splits and abstracts different aspects of networking into five layers. The top four layers each have different protocols on how the messages are formatted.
 
-<center>
+<div class="img-container">
    <img src="./assets/five-layers-protocol.svg" />
-</center>
+</div>
 
 ### Encapsulation
 Hosts send messages to another by encapsulating their messages with each layer's protocol. Each protocol is used to maintain different aspects of computer networking. For example, the frame from link-layer or datagram from network-layer is used for routing the message to its destination, deciding how and where the datagrams/frames are routed. The transport layer protocol determines how segments (encapsulated application-layer message) are transported between two endpoints (how two sockets communicate with each other).
 
-<center>
+<div class="img-container">
    <img src="./assets/encapsulations-network.svg" class="big-img" />
-</center>
+</div>
 
 As shown in the figure above, the host (computer) sends a message by encapsulating its message with transport-layer, network-layer, and link-layer protocols. When arrived, the destination host decapsulates the frame into datagram, then passes the segment to the destined socket, which the socket decapsulates it into a message for the application to receive.
 
@@ -81,9 +85,9 @@ As shown in the figure above, the host (computer) sends a message by encapsulati
 ### Application Layer - HTTP
 The layer that will be implemented and focused on in this project is the application layer protocol. Application layer controls the communication between two processes. The application layer protocol that is commonly used for transferring resources and data between web browser and server is the Hypertext Transfer Protocol (HTTP). We'll be implementing [HTTP/2](https://www.rfc-editor.org/rfc/rfc9113) and [HTTP/1.1](https://www.rfc-editor.org/rfc/rfc9110) that use the TCP/IP protocols (TCP for transport layer & IP for network layer).
 
-<center>
+<div class="img-container">
    <img src="./assets/socket-app-layer.svg" />
-</center>
+</div>
 
 As shown in figure 4, a socket is used to communicate between two processes. It is the interface between the application layer and the transport layer within a host. Many languages, including C++, provide API to access these socket interfaces, which is why we only have to program the application layer.
 
@@ -96,9 +100,9 @@ Unlike the application-layer protocol that sets how messages are understood betw
 
 Since we'll be implementing HTTP/2 and HTTP/1.1, we'll focus on Transmission Control Protocol (TCP) as both protocols use TCP for transport-layer. TCP is a connection-oriented protocol that provides reliable data transfer, meaning that the TCP will only allow two processes to transfer data if the connection is fully established and the data sent between two processes are ensured to be delivered.
 
-<center>
+<div class="img-container">
    <img src="./assets/transport-layer-sockets.svg" />
-</center>
+</div>
 
 As shown in figure 5, the TCP or transport-layer protocols handle <b>demultiplexing</b> (transportation of data segments to correct socket) and <b>multiplexing</b> (encapsulation of messages with headers to create segments) of messages. For TCP sockets, it is identified by using a four-tuple: source IP address, source port number, destination IP address, and destination port number. When a TCP segment arrives to the host, it uses the four-tuple to demultiplex the segment to the correct socket. 
 
