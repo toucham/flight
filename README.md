@@ -1,10 +1,3 @@
-<style>
-.big-img {
-  width: 50%;
-  min-width: 360px;
-  max-width: 550px;
-}
-</style>
 <h1> Simple HTTP Server Framework with C++ </h1>
 
 This is a step-by-step process of my implementations of a simple HTTP web server.
