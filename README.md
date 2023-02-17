@@ -19,10 +19,8 @@ This repository serves as a learning experience for me to practice programming i
   - [Open TCP socket for connection](#open-tcp-socket-for-connection)
     - [TCP Socket class](#tcp-socket-class)
   - [Parsing HTTP/1.1 \& HTTP/2.0 requests](#parsing-http11--http20-requests)
-  - [Routings (RESTful API)](#routings-restful-api)
+  - [Routings](#routings)
   - [Serve static content](#serve-static-content)
-- [Implement other features](#implement-other-features)
-  - [Multithreading server](#multithreading-server)
 
 # Background
 The information presented below on computer system and computer network is based on my readings of "Computer Systems: A Programmer's Perspective 3rd Edition" by Randal E. Bryant and David R. O'Hallaron and "Computer Networking: A Top-Down Approach 8th Edition" by Jim Kurose and Keith Ross. 
@@ -98,18 +96,21 @@ For example, web client host A initiates two HTTP sessions to server B; therefor
 # C++ Web Server Implementations
 Now that we have a basic understanding of computer networking, we can try implementing a HTTP web server with C++.
 ## Open TCP socket for connection 
-HTTP/1.1 and HTTP/2 are all application-layer protocol that is implemented under TCP/IP In order to establish connection between a web server and client, both entities have to estalibish a connection through TCP socket in order to send HTTP requests and receive HTTP responses.
+HTTP/1.1 and HTTP/2 are all application-layer protocol that is implemented under TCP/IP In order to establish connection between a web server and client. Both entities have to estalibish a connection through TCP socket in order to send HTTP requests and receive HTTP responses.
+
+Each host, containing a set of sockets, is assigned with an unsigned 32-bit integer or IPv4 address, that is used by the Internet Protocol (IP) in the network-layer to identify each host and deliver the datagram to correct host.
+
+```cpp
+/* IP address structure */
+struct in_addr {
+  uint32_t s_addr; // Address in network byte order (big-endian)
+}
+```
 
 ### TCP Socket class 
 
-
 ## Parsing HTTP/1.1 & HTTP/2.0 requests
 
-## Routings (RESTful API)
+## Routings
 
 ## Serve static content
-
-# Implement other features
-To be continued...
-
-## Multithreading server
