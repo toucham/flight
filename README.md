@@ -23,14 +23,12 @@ This repository serves as a learning experience for me to practice programming i
   - [Serve static content](#serve-static-content)
 
 # Background
-The information presented below on computer system and computer network is based on my readings of "Computer Systems: A Programmer's Perspective 3rd Edition" by Randal E. Bryant and David R. O'Hallaron and "Computer Networking: A Top-Down Approach 8th Edition" by Jim Kurose and Keith Ross. 
-
-This project will not only serve to help me but also the readers understand the fundamental knowledge and the under-the-hood mechanisms of a web application. Throughout this project, I will assume that you, the readers, have at least the basic knowledge or experience of developing a web application using languages and frameworks like ExpressJs/NestJs (Javascript) or Django/Flask (Python). Although these frameworks and high-level programming languages allow for faster development of web applications, they abstracted many fundemental details of computer networking. Therefore, this repository/project will serve as a starting point for us to better understand the web application as a whole.
+The purpose of this project is for reinforcing my fundamental knowledge and understanding of web application, while also learning C++. Throughout this project, I will assume that you, the readers, have at least the basic knowledge or experience of developing a web application using at least high-level languages or frameworks like ExpressJs/NestJs (Javascript) or Django/Flask (Python). Although these frameworks and high-level languages allow for faster development, they abstracted many fundamental details of computer networking and systems. Therefore, this repository/project will serve as a starting point for my journey to understand web application as a whole.
 
 <b>FYI:</b> If any of the information presented below is incorrect, please let me know through PR or issues. Thank you. 
 
 ## Web server
-A web application consist of one or many clients and a server. The application follows the client-server model (Figure 1), such that there are one server process and one or more client processes. The server process manages some kind of resources (database) that is used to process the requests made by its clients. The fundamental operation made in this model is a <i>transaction</i> as shown in Figure 1. This operation consists of four steps:
+A web application is an application consist of one or many clients and a server. The application follows the client-server model. The server process manages some kind of resources that is used to process the requests made by its clients. The fundamental operation made in this model is a <i>transaction</i> as shown in Figure 1. This operation consists of four steps:
 
 1. Client initiates a transaction by sending a request to the server (e.g. HTTP Requests).
 2. Server receives the request and process it as necessary. (e.g. Client might request their user information, that is stored in the database that is accessible by the server).
@@ -46,7 +44,7 @@ A web application consist of one or many clients and a server. The application f
 
 
 ## Networks
-Communication between the client and server is done through computer network. Essentially, computer network is an interconnected systems between computers and devices, exchanging data and resource. Computer network is a deep and extensive topic; therefore, to not convulate this repositorty/project too much about computer network as our main focus is on the implementations of the web server, the repository/project will only contain the minimal knowledge required to create a web server. However, if anyone wants to delve deeper into this topic, I really recommend reading ["Computer Networking: A Top-Down Approach 8th Edition" by Jim Kurose and Keith Ross](https://gaia.cs.umass.edu/kurose_ross/index.php).
+Client and server communicate with each other through computer networ. Essentially, computer network is an interconnected system between computers and devices, exchanging data and resource. Computer network is a deep and extensive topic; therefore, to not convulate this repositorty/project about computer networking too much, our main focus will be on the implementations of the web server. The repository/project will only contain the minimal knowledge required to create a web server. However, if anyone wants to delve deeper into this topic, I really recommend reading ["Computer Networking: A Top-Down Approach 8th Edition" by Jim Kurose and Keith Ross](https://gaia.cs.umass.edu/kurose_ross/index.php).
 
 ### Five Layers Model
 In computer networking, the format of the messages exchanged between hosts/devices is determined by a set of standardized protocols. For this project, the protocols will be based on the <b>five-layer protocols</b> mentioned in Jim Kurose and Keith Ross textbook (Figure 2). There is also the OSI model that splits the protocols in 7 layers; however, this project is based on Kurose and Rose model. The five-layers model splits and abstracts different aspects of networking into five layers. The top four layers each have different protocols on how the messages are formatted.
